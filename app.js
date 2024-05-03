@@ -6,6 +6,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
+app.get('/', (req, res) => res.json({ status: true, message: 'Hello world!', data: null }));
 const routes = require('./routes');
 app.use('/api/v1', routes);
 
